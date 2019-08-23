@@ -1,6 +1,7 @@
 {
   "presets": [
     ["@babel/env", {
+      "loose": true,
       "targets": {
         "browsers": [
           ">0.25%",
@@ -10,5 +11,5 @@
       },
       "modules": false
     }]
-  ],
+  ]
 }

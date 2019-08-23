@@ -6,7 +6,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = merge(base, {
   mode: "production",
   output: {
-    filename: "bundle.min.js"
+    filename: "js/[name].bundle.js",
+    path: path.resolve(process.cwd(), "dist"),	// 결과 기준 폴더
   },
   devtool: false,
   performance: {
@@ -22,6 +23,16 @@ module.exports = merge(base, {
           }
         }
       })
-    ]
+    ],
+    splitChunks: {
+      cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/](phaser)[\\/]/,
+            name: 'vendor',
+            enforce: true,
+            chunks: 'initial'
+        }
+      }
+    },
   }
 });
