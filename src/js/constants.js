@@ -1,0 +1,1 @@
+export const SCALE_RATIO = window.innerWidth / 300;

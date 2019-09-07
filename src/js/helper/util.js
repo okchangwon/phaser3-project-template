@@ -1,3 +1,7 @@
+export function getAsset(name) {
+  return `./assets/${name}`;
+}
+
 export function getAssetImg(name) {
-  return `./assets/${name}.png`;
+  return getAsset(`${name}.png`);
 }
